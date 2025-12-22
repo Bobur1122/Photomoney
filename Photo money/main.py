@@ -27,9 +27,8 @@ from aiogram.fsm.storage.memory import MemoryStorage
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 🔐 CONFIGURATION
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-BOT_TOKEN = "8373194071:AAHE8tZ0wlFdwnSObQtLTeSbOn5YpIs3WZc,proxy='http://proxy.server:3128'"
-ADMIN_ID = 6637983416
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+ADMIN_ID = int(os.getenv("ADMIN_ID"))
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 📊 GLOBAL STORAGE
