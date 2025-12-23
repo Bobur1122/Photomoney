@@ -26,7 +26,7 @@ load_dotenv()
 # 🔐 CONFIGURATION
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-ADMIN_ID = int(os.getenv("ADMIN_ID"))
+ADMIN_ID = os.getenv("ADMIN_ID")
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 📊 GLOBAL STORAGE
@@ -258,3 +258,4 @@ async def main():
 if __name__ == "__main__":
     import asyncio
     asyncio.run(main())
+
