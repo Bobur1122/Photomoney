@@ -10,6 +10,11 @@ import random
 import logging
 from typing import Dict, Any
 from datetime import datetime
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 from aiogram import Bot, Dispatcher, F, Router
 from aiogram.filters import Command, CommandStart
@@ -29,6 +34,7 @@ from aiogram.fsm.storage.memory import MemoryStorage
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 ADMIN_ID = int(os.getenv("ADMIN_ID"))
+
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 📊 GLOBAL STORAGE
@@ -614,5 +620,6 @@ async def main():
     
     await dp.start_polling(bot, allowed_updates=dp.resolve_used_update_types())
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    import asyncio
     asyncio.run(main())
