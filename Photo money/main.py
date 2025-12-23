@@ -33,7 +33,13 @@ from aiogram.fsm.storage.memory import MemoryStorage
 # 🔐 CONFIGURATION
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-ADMIN_ID = int(os.getenv("ADMIN_ID"))
+import os
+
+ADMINS = list(map(int, os.getenv("ADMINS").split(',')))
+
+def is_admin(user_id: int) -> bool:
+    return user_id in ADMINS
+
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -623,3 +629,4 @@ async def main():
 if __name__ == "__main__":
     import asyncio
     asyncio.run(main())
+
