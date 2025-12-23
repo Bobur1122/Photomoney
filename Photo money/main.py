@@ -33,12 +33,8 @@ from aiogram.fsm.storage.memory import MemoryStorage
 # 🔐 CONFIGURATION
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-import os
+ADMIN_ID = int(os.getenv("ADMIN_ID"))
 
-ADMINS = list(map(int, os.getenv("ADMINS").split(',')))
-
-def is_admin(user_id: int) -> bool:
-    return user_id in ADMINS
 
 
 
